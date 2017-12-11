@@ -1,0 +1,10 @@
+{% extends "::plantilla.html.twig" %}
+
+{%block content %}
+    <ul>
+        {% for tag in nameTags %}
+            <li>{{ dump(tag) }}</li>
+        {% endfor %}
+    </ul>
+{%endblock%}
+

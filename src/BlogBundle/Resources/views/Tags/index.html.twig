@@ -1,0 +1,11 @@
+{% extends "::plantilla.html.twig" %}
+{%block content %}
+    <h2>Listado de etiquetas:</h2>
+    {% for tag in tags %}
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ tag.name }}</div>
+            <div class="panel-body">{{ tag.description }}</div>
+        </div>
+    {% endfor %}
+{%endblock%}
+

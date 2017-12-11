@@ -1,0 +1,21 @@
+home:
+    path:     /
+    defaults: { _controller: BlogBundle:Default:index }
+
+login:
+    path: /login
+    defaults: { _controller: BlogBundle:Default:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+tags_index:
+    path:     /tags
+    defaults: { _controller: BlogBundle:Tags:index }
+
+tags_add:
+    path:     /tags/add
+    defaults: { _controller: BlogBundle:Tags:add }
