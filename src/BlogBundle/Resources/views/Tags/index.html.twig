@@ -1,5 +1,9 @@
 {% extends "::plantilla.html.twig" %}
 {%block content %}
+    {% for message in app.session.flashbag().get('status') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+
     <h2>Listado de etiquetas:</h2>
     {% for tag in tags %}
         <div class="panel panel-default">

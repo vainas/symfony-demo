@@ -44,12 +44,17 @@ class TagsController extends Controller
                 $em->flush();
 
                 $status = "Etiqueta registrada correctamente";
+
+                $this->session->getFlashBag()->add('status', $status);
+
+                return $this->redirectToRoute("tags_index");
+
             } else {
+
                 $status = "No se ha podido registrar la etiqueta";
             }
-            $this->session->getFlashBag()->add('status', $status);
 
-            return $this->redirectToRoute("tags_index");
+            $this->session->getFlashBag()->add('status', $status);
         }
 
 

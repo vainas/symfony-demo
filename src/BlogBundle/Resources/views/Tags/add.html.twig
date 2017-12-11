@@ -1,6 +1,9 @@
 {% extends "::plantilla.html.twig" %}
 {%block content %}
     <h2>Agregar etiquetas:</h2>
+    {% for message in app.session.flashbag().get('status') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
     <div class="col-lg-4">
         {{ form_start(form) }}
         {{ form_end(form) }}
