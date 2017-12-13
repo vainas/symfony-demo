@@ -28,6 +28,19 @@ class TagsController extends Controller
             array('tags' => $tags));
     }
 
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $tag = $em->getRepository(Tags::class)->find($id);
+
+        if (count($tag->getEntryTag()) == 0 ) {
+            $em->remove($tag);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute("tags_index");
+    }
+
     public function addAction(Request $request)
     {
 

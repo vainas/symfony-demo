@@ -19,3 +19,7 @@ tags_index:
 tags_add:
     path:     /tags/add
     defaults: { _controller: BlogBundle:Tags:add }
+
+tags_delete:
+    path:     /tags/delete/{id}
+    defaults: { _controller: BlogBundle:Tags:delete }

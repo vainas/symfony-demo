@@ -31,7 +31,8 @@ class TagsType extends AbstractType
                     "class"     => "form-name form-control"
                 )
             ))
-            ->add('Registrar', SubmitType::class, array(
+            ->add('save', SubmitType::class, array(
+                "label"    => "Guardar",
                 "attr"     => array(
                     "class"     => "btn btn-success"
                 )

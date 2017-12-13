@@ -3,12 +3,15 @@
     {% for message in app.session.flashbag().get('status') %}
         <div class="alert alert-success">{{ message }}</div>
     {% endfor %}
-
+    <a href="{{ path('tags_add') }}" class="btn btn-success">Añadir etiqueta</a>
     <h2>Listado de etiquetas:</h2>
     {% for tag in tags %}
         <div class="panel panel-default">
             <div class="panel-heading">{{ tag.name }}</div>
             <div class="panel-body">{{ tag.description }}</div>
+            <div class="panel-footer">
+                <a href="{{ path('tags_delete', {'id': tag.id}) }}" class="btn btn-danger {{ tag.entryTag | length != 0 ? 'disabled' }} }disabled">Borrar etiqueta</a>
+            </div>
         </div>
     {% endfor %}
 {%endblock%}

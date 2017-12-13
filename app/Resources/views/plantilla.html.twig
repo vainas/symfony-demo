@@ -36,6 +36,7 @@
                             <ul class="dropdown-menu" role="menu">
                             {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
                                 <li><a href="#">Nuevo post</a></li>
+                                <li><a href="{{ path('tags_index') }}">Etiquetas</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{path("logout")}}">Salir</a></li>
                             {% else %}
